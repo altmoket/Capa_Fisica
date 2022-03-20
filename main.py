@@ -8,7 +8,7 @@ from components.hub import Hub
 
 hub = Hub("Leo",3)
 hub.print()
-
+print("Vayanse a la mierda todos")
 
 
 
