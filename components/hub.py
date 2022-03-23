@@ -16,9 +16,3 @@ class Hub(Device):
         raise NotImplementedError
     def read(self,port:Port):
         raise NotImplementedError
-
-    def print(self):
-        print(self.name)
-        for port in self.ports:
-            port.print()
-            pass
