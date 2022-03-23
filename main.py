@@ -1,4 +1,4 @@
-from system import System
+from controllers.system import System
 import threading
 system = System()
 
