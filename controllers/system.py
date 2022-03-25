@@ -1,5 +1,4 @@
 from components.cable import Cable
-from components.device import Device
 from components.computer import Computer
 from components.hub import Hub
 import threading
@@ -23,7 +22,7 @@ class System(object):
     def stop(self):
         self.isWorking = False
 
-    def add_device(self,device:Device, time):
+    def add_device(self,device, time):
         sleep(time/1000)#1000-> 1seg = 1000milseg
         self.devices.append(device)
         outFile = open("output/"+device.name+".txt","w")
@@ -36,7 +35,7 @@ class System(object):
             if deviceName.__eq__(device.name):
                 device.disconnect_port(portName)
 
-    def connect_ports(self,port1Name:str,port2Name,time):
+    def connect_ports(self,port1Name,port2Name,time):
         sleep(time/1000)
         port1 = None
         port2 = None

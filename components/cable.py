@@ -5,6 +5,7 @@ class Cable:
         port2.connect(self)
         self.port1 = port1
         self.port2 = port2
+
     def read(self):
         if self.port1.transmiting and self.port2.transmiting:
             return self.port1.bit ^ self.port2.bit
@@ -13,3 +14,7 @@ class Cable:
         elif self.port2.transmiting:
             return self.port2.bit
         return None
+
+    def disconnect(self):
+        self.port1.disconnect_port()
+        self.port2.disconnect_port()

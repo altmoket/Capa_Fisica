@@ -1,6 +1,4 @@
 import threading
-
-
 class Port:
     def __init__(self, name:str, device):
         self.name = name
@@ -18,15 +16,19 @@ class Port:
         if self.cableConnected():
             self.bit = bit
             self.transmiting = True
+
     def getData(self):
         if self.cableConnected():
             return self.cable.read()
+
     def stop_transmition(self):
         self.transmiting = False
 
     def disconnect_cable(self):
+        self.stop_transmition()
         del(self.cable)
         pass
+
     def cableConnected(self)->bool:
         if self.cable:
             return True

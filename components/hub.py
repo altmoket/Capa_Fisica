@@ -5,6 +5,7 @@ class Hub(Device):
         Device.__init__(self,name,number_of_ports)
         self.port = []
         self.initialize_ports()
+
     def initialize_ports(self):
         for i in range(self.number_of_ports):
             port = Port(self.name+"_"+str(i+1),self)
@@ -12,10 +13,14 @@ class Hub(Device):
             pass
 
     def disconnect_port(self, portName):
-        return super().disconnect_port(portName)
+        for port in self.port:
+            if portName.__eq__(port.name):
+                port.cable.disconnect() 
 
     def getPort(self, portName):
-        return super().getPort(portName)
-    
+        for port in self.port:
+            if portName.__eq__(port.name):
+                return port
+
     def send(self, data, portName):
         return super().send(data, portName)
