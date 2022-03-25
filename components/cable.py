@@ -1,3 +1,4 @@
+
 class Cable:
     def __init__(self, port1, port2):
         port1.connect(self)

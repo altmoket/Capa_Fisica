@@ -1,11 +1,17 @@
+import threading
+
+
 class Port:
     def __init__(self, name:str, device):
         self.name = name
         self.device = device
         self.transmiting = False
+        self.reading = False
 
     def connect(self, cable):
         self.cable = cable
+        listener = threading.Thread(target=self.getData,args=())
+        listener.start()
         pass
 
     def setData(self,bit):
@@ -25,7 +31,3 @@ class Port:
         if self.cable:
             return True
         return False
-
-
-
-

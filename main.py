@@ -1,23 +1,36 @@
-from controllers.system import System
+# from components.computer import Computer
+# from controllers.system import System
+# system = System()
+
+# instructions = open("script.txt",'r')
+
+# for instruction in instructions:
+    # system.execute(instruction)
+# instructions.close()
+
+
 import threading
-system = System()
+from time import sleep
 
-instructions = open("script.txt",'r')
 
-for instruction in instructions:
-    instruction = instruction.split(" ")
-    action = instruction[1]
-    if action.__eq__("create") :
-        print("Create action")
-        pass
-    elif action.__eq__("connect"):
-        print("Connect action")
-        pass
-    elif action.__eq__("send"):
-        print("Send action")
-        pass
-    elif action.__eq__("disconnect"):
-        print("Disconnect action")
-        pass
-    pass
-instructions.close()
+class Thing:
+    def __init__(self) -> None:
+        self.transmition = True
+        executer = threading.Thread(target=self.execute, args=())
+        executer.start()
+    def execute(self):
+        i = 0
+        while self.transmition:
+            i += 1
+            print("Transmition " + str(i))
+        print("Transmition good")
+
+    def stop_transmition(self):
+        self.transmition = False
+        print("Stopping transmition")
+        
+
+thing = Thing()
+sleep(10/1000)
+thing.stop_transmition()
+sleep(15/1000)
