@@ -8,8 +8,8 @@ class Port:
 
     def connect(self, cable):
         self.cable = cable
-        listener = threading.Thread(target=self.getData,args=())
-        listener.start()
+        # listener = threading.Thread(target=self.getData,args=())
+        # listener.start()
         pass
 
     def setData(self,bit):
@@ -30,6 +30,6 @@ class Port:
         pass
 
     def cableConnected(self)->bool:
-        if self.cable:
+        if hasattr(self, "cable"):
             return True
         return False

@@ -14,13 +14,17 @@ class System(object):
         pass
 
     def begin_timer(self):
+        start_time = int(round(time()*1000))
         while self.isWorking:
-            newTime = int(round(time.time()*1000))
+            newTime = int(round(time()*1000)) - start_time
             if self.time < newTime:
                 self.time = newTime
 
     def stop(self):
         self.isWorking = False
+
+    def getDevices(self):
+        return self.devices
 
     def add_device(self,device, time):
         sleep(time/1000)#1000-> 1seg = 1000milseg
@@ -45,15 +49,16 @@ class System(object):
             if device1Name.__eq__(device.name):
                 port1 = device.getPort(port1Name)
             elif device2Name.__eq__(device.name):
-                port2 = device.getPort(port1Name)
-        Cable(port1,port2)
-
+                port2 = device.getPort(port2Name)
+        if not(port1 == None or port2 == None):
+            Cable(port1,port2)
+        
     def send(self,data, portName,time):
         sleep(time/1000)
         deviceName = portName.split("_")[0]
         for device in self.devices:
             if deviceName.__eq__(device.name):
-                device.send(data,portName)
+                device.send(data,portName,self.signal_time,self.time)
 
     def execute(self,instruction):
         instruction = instruction.rstrip('\n').split(" ")

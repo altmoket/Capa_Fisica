@@ -1,3 +1,4 @@
+from time import sleep
 from components.port import Port
 from components.device import Device
 class Hub(Device):
@@ -17,10 +18,20 @@ class Hub(Device):
             if portName.__eq__(port.name):
                 port.cable.disconnect() 
 
+    def getPorts(self):
+        return self.port
+
     def getPort(self, portName):
         for port in self.port:
             if portName.__eq__(port.name):
                 return port
 
-    def send(self, data, portName):
-        return super().send(data, portName)
+    def send(self, data, portName, signal_time):
+        for port in self.port:
+            if portName.__eq__(port.name):
+                for bit in data:
+                    port.setData(bit)
+                    sleep(signal_time/1000)
+                return None
+            pass
+        pass

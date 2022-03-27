@@ -1,5 +1,4 @@
 0 create hub huber 4
-5000 create host pecer
-40 connect h_1 pc_1
-60 send pc_1 0101010111001100
-20 disconnect pc_1
+50 create host pecer
+200 connect huber_2 pecer_1
+
