@@ -52,13 +52,18 @@ class System(object):
                 port2 = device.getPort(port2Name)
         if not(port1 == None or port2 == None):
             Cable(port1,port2)
-        
-    def send(self,data, portName,time):
+
+    def send(self,bits, portName,time):
         sleep(time/1000)
         deviceName = portName.split("_")[0]
         for device in self.devices:
             if deviceName.__eq__(device.name):
-                device.send(data,portName,self.signal_time,self.time)
+                device.send(bits,self.signal_time)
+
+    def write_in_output(self, deviceName, outMessage):
+        outFile = open("output/" + deviceName + ".txt", "a")
+        outFile.write(str(self.time) + " " + outMessage)
+        outFile.close()
 
     def execute(self,instruction):
         instruction = instruction.rstrip('\n').split(" ")
@@ -69,11 +74,11 @@ class System(object):
             deviceType = instruction[2]
             deviceName = instruction[3]
             if deviceType.__eq__("host"):
-                device = Computer(deviceName)
+                device = Computer(deviceName, self.time, self.write_in_output)
                 pass
             else:
                 numberOfPorts = int(instruction[4])
-                device = Hub(deviceName,numberOfPorts)
+                device = Hub(deviceName, numberOfPorts, self.write_in_output)
                 pass
             creator = threading.Thread(target=self.add_device,args=(device,time))
             creator.start()
@@ -88,8 +93,8 @@ class System(object):
 
         elif action.__eq__("send"):
             portName = instruction[2]
-            data = instruction[3]
-            sender = threading.Thread(target=self.send,args=(data,portName,time))
+            bits = instruction[3]
+            sender = threading.Thread(target=self.send,args=(bits,portName,time))
             sender.start()
             pass
 

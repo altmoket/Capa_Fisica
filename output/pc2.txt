@@ -1,0 +1,14 @@
+104 pc2_1 send 1 ok
+129 pc2_1 send 1 collision
+145 pc2_1 send 1 ok
+160 pc2_1 send 1 collision
+170 pc2_1 send 1 collision
+201 pc2_1 send 1 collision
+221 pc2_1 send 1 collision
+237 pc2_1 send 1 collision
+252 pc2_1 send 1 ok
+283 pc2_1 send 1 ok
+318 pc2_1 send 0 ok
+354 pc2_1 send 1 ok
+394 pc2_1 send 0 ok
+429 pc2_1 send 1 ok

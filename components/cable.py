@@ -6,14 +6,14 @@ class Cable:
         port1.connect(self)
         port2.connect(self)
 
-    # def read(self):
-        # if self.port1 and self.port2 and self.port1.transmiting and self.port2.transmiting:
-            # return self.port1.bit ^ self.port2.bit
-        # elif self.port1 and self.port1.transmiting:
-            # return self.port2.bit
-        # elif self.port2 and self.port2.transmiting:
-            # return self.port2.bit
-        # return None
+    def read(self):
+        if self.port1.transmiting and self.port2.transmiting:
+            return int(self.port1.bit) ^ int(self.port2.bit)
+        elif self.port1.transmiting:
+            return int(self.port1.bit)
+        elif self.port2.transmiting:
+            return int(self.port2.bit)
+        return -1
 
     def next_port(self, portName):
         if portName.__eq__(self.port1.name):
@@ -22,5 +22,5 @@ class Cable:
             return self.port1 
 
     def disconnect(self):
-        self.port1.disconnect_port()
-        self.port2.disconnect_port()
+        self.port1.disconnect_cable()
+        self.port2.disconnect_cable()

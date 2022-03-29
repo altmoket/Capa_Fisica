@@ -1,0 +1,10 @@
+64 pecer_1 send 0 ok
+64 pecer_1 send 0 collision
+69 pecer_1 send 0 ok
+75 pecer_1 send 0 ok
+86 pecer_1 send 1 collision
+103 pecer_1 send 1 collision
+103 pecer_1 send 0 ok
+124 pecer_1 send 1 ok
+129 pecer_1 send 0 collision
+134 pecer_1 send 0 ok

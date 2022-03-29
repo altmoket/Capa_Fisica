@@ -24,7 +24,7 @@ def print_devices_info(devices):
                     print(port.name + " ::connected with:: " + port.cable.next_port(port.name).name)
                 pass
         pass
-sleep(1)
+sleep(2)
 devices = system.getDevices()
 print_devices_info(devices)
 system.isWorking = False
