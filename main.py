@@ -2,15 +2,12 @@ from time import sleep
 from controllers.network import Network
 
 def main():
-    network =Network()
+    network=Network()
     instructions = open("script.txt",'r')
     for instruction in instructions:
         network.execute(instruction)
-        instructions.close()
     sleep(2)
     network.isWorking = False
-
-
-
+    instructions.close()
 
 main()

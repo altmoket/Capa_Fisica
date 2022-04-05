@@ -31,10 +31,3 @@ class Computer(Device):
         elif message.__eq__("stop_transmition"):
             return 0;
         self.write_in_output(self.name, outMessage)
-
-    def getPorts(self):
-        return self.port
-
-    @property
-    def getType(self):
-        return "Host"

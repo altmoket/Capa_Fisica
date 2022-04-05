@@ -16,11 +16,3 @@ class Device(metaclass = ABCMeta):
     @abstractmethod
     def write(self, bit, message, portName):
         pass
-
-    @abstractmethod
-    def getPorts(self):
-        pass
-
-    @property
-    def getType(self):
-        pass

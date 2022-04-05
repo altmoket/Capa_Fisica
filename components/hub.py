@@ -1,5 +1,3 @@
-from time import sleep
-import threading
 from components.port import Port
 from components.device import Device
 class Hub(Device):
@@ -7,7 +5,6 @@ class Hub(Device):
         Device.__init__(self,name,number_of_ports,write_in_output)
         self.port = []
         self.initialize_ports()
-        self.transmiting = False
 
     def initialize_ports(self):
         for i in range(self.number_of_ports):
@@ -52,11 +49,3 @@ class Hub(Device):
 
         elif message.__eq__("stop_transmition"):
             self.reset_all_ports(portName)
-
-        elif message.__eq__("collision"):
-            self.reset_all_ports(portName)
-            print("Hay collisiones")
-
-    @property
-    def getType(self):
-        return "Host"
