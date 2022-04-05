@@ -21,6 +21,10 @@ class Cable:
         else:
             return self.port1 
 
+    def transmit(self, bit, portOrigin):
+        port = self.next_port(portOrigin)
+        port.transmit_to_device(bit)
+
     def disconnect(self):
         self.port1.disconnect_cable()
         self.port2.disconnect_cable()

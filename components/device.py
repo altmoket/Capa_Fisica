@@ -20,3 +20,7 @@ class Device(metaclass = ABCMeta):
     @abstractmethod
     def getPorts(self):
         pass
+
+    @property
+    def getType(self):
+        pass

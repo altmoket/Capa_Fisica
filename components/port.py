@@ -1,7 +1,5 @@
 import threading
 from time import sleep
-
-
 class Port:
     def __init__(self, name, device):
         self.name = name
@@ -11,32 +9,41 @@ class Port:
 
     def connect(self, cable):
         self.cable = cable
-        # reader = threading.Thread(target = self.read_from_cable, args=())
-        # reader.start()
         pass
 
-    def read_from_cable(self):
-        while self.cableConnected():
-            bitReceived = self.cable.read()
-            if bitReceived != -1:
-                self.device.write(bitReceived, "ok", self.name)
+    def transmit_to_device(self, bit):
+        if bit != -1:
+            self.device.write(bit,"receive",self.name)
+        else:
+            self.device.write(bit,"stop_transmition", self.name)
 
-    def setbit(self,bit):
+    def transmit(self, bit):
+        if self.cableConnected():
+            self.bit = bit
+            self.transmiting = True
+            self.cable.transmit(bit, self.name)
+
+
+    def setbit(self, bit):
         if self.cableConnected():
             self.bit = bit
             self.transmiting = True
             bitReceived = self.cable.read()
-            while bitReceived!=-1 and bitReceived != bit and self.cableConnected():
+            while self.cableConnected() and bitReceived != bit:
                 self.device.write(bit, "collision", self.name)
                 self.transmiting = False
                 sleep(5/1000)
                 self.transmiting = True
-                bitReceived = self.cable.read()
-            self.device.write(bit, "ok", self.name)
+                if self.cableConnected():
+                    bitReceived = self.cable.read()
+            self.device.write(bit, "send", self.name)
+            self.cable.transmit(bit, self.name)
 
 
     def stop_transmition(self):
         self.transmiting = False
+        if self.cableConnected():
+            self.cable.transmit(-1, self.name)
 
     def disconnect_cable(self):
         self.stop_transmition()

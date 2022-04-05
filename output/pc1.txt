@@ -1,10 +1,35 @@
-68 pc1_1 send 0 ok
-104 pc1_1 send 1 collision
-134 pc1_1 send 1 collision
-145 pc1_1 send 1 collision
-150 pc1_1 send 1 collision
-160 pc1_1 send 1 collision
-181 pc1_1 send 1 ok
-221 pc1_1 send 1 ok
-242 pc1_1 send 0 collision
-262 pc1_1 send 0 ok
+251 pc1_1 send 1 ok
+264 pc1_1 receive 1
+316 pc1_1 send 0 collision
+316 pc1_1 receive 1
+323 pc1_1 send 0 collision
+354 pc1_1 send 0 collision
+354 pc1_1 receive 1
+368 pc1_1 receive 1
+368 pc1_1 send 0 collision
+368 pc1_1 receive 0
+375 pc1_1 send 0 ok
+387 pc1_1 receive 1
+403 pc1_1 send 0 collision
+418 pc1_1 send 0 collision
+434 pc1_1 send 0 ok
+466 pc1_1 receive 1
+473 pc1_1 receive 0
+505 pc1_1 receive 1
+511 pc1_1 send 1 ok
+558 pc1_1 send 0 collision
+569 pc1_1 receive 0
+602 pc1_1 send 0 collision
+612 pc1_1 send 0 ok
+669 pc1_1 receive 0
+685 pc1_1 send 0 ok
+701 pc1_1 receive 1
+770 pc1_1 send 0 ok
+770 pc1_1 receive 1
+800 pc1_1 receive 1
+836 pc1_1 send 1 collision
+852 pc1_1 send 1 collision
+858 pc1_1 send 1 collision
+878 pc1_1 send 1 ok
+878 pc1_1 receive 1
+901 pc1_1 receive 1

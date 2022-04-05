@@ -1,0 +1,26 @@
+258 pc3_1 receive 1
+275 pc3_1 receive 1
+316 pc3_1 receive 1
+323 pc3_1 send 0 ok
+354 pc3_1 receive 1
+368 pc3_1 receive 1
+381 pc3_1 receive 0
+418 pc3_1 receive 1
+434 pc3_1 send 0 collision
+445 pc3_1 send 0 collision
+466 pc3_1 send 0 ok
+466 pc3_1 receive 1
+473 pc3_1 receive 0
+521 pc3_1 receive 1
+527 pc3_1 receive 1
+569 pc3_1 send 0 ok
+612 pc3_1 receive 0
+648 pc3_1 send 0 ok
+732 pc3_1 receive 1
+732 pc3_1 receive 0
+770 pc3_1 send 1 ok
+788 pc3_1 send 1 ok
+788 pc3_1 receive 0
+878 pc3_1 send 1 ok
+901 pc3_1 send 1 ok
+923 pc3_1 receive 1

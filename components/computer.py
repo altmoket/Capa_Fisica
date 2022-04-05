@@ -1,4 +1,3 @@
-from os import close
 from time import sleep
 from components.port import Port
 from components.device import Device
@@ -19,11 +18,23 @@ class Computer(Device):
         for bit in bits:
             self.port.setbit(int(bit))
             sleep(signal_time/1000)
-        self.port.stop_transmition()
+            self.port.stop_transmition()
 
     def write(self, bit, message, portName):
-        outMessage = portName + " " + "send" + " " + str(bit) + " " + message + "\n"
+        outMessage = ""
+        if message.__eq__("send"):
+            outMessage = portName + " " + message + " " + str(bit) + " " + "ok" + "\n"
+        elif message.__eq__("collision"):
+            outMessage = portName + " " + "send" + " " + str(bit) + " " + "collision" + "\n"
+        elif message.__eq__("receive"):
+            outMessage = portName + " " + message + " " + str(bit) + "\n"
+        elif message.__eq__("stop_transmition"):
+            return 0;
         self.write_in_output(self.name, outMessage)
 
     def getPorts(self):
         return self.port
+
+    @property
+    def getType(self):
+        return "Host"

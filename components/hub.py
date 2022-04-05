@@ -1,4 +1,5 @@
 from time import sleep
+import threading
 from components.port import Port
 from components.device import Device
 class Hub(Device):
@@ -6,6 +7,7 @@ class Hub(Device):
         Device.__init__(self,name,number_of_ports,write_in_output)
         self.port = []
         self.initialize_ports()
+        self.transmiting = False
 
     def initialize_ports(self):
         for i in range(self.number_of_ports):
@@ -29,13 +31,32 @@ class Hub(Device):
     def write_in_all_ports(self, bit, portOriginName):
         for port in self.port:
             if not portOriginName.__eq__(port.name):
-                port.setbit(bit)
-            else:
-                port.stop_transmition()
+                self.write(bit, "send", port.name)
+                port.transmit(bit)
         pass
 
-    def write(self, bit, message, portName):
-        outMessage = portName + " " + "receive" + " " + str(bit) + "\n"
-        self.write_in_output(self.name, outMessage)
-        self.write_in_all_ports(bit, portName)
+    def reset_all_ports(self, portOriginName):
+        for port in self.port:
+            if not portOriginName.__eq__(port.name):
+                port.stop_transmition()
 
+    def write(self, bit, message, portName):
+        if message.__eq__("receive"):
+            outMessage = portName + " " + message + " " + str(bit) + "\n"
+            self.write_in_output(self.name, outMessage)
+            self.write_in_all_ports(bit, portName)
+
+        elif message.__eq__("send"):
+            outMessage = portName + " " + message + " " + str(bit) + "\n"
+            self.write_in_output(self.name, outMessage)
+
+        elif message.__eq__("stop_transmition"):
+            self.reset_all_ports(portName)
+
+        elif message.__eq__("collision"):
+            self.reset_all_ports(portName)
+            print("Hay collisiones")
+
+    @property
+    def getType(self):
+        return "Host"
