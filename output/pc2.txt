@@ -1,24 +1,25 @@
-233 pc2_1 send 1 ok
-251 pc2_1 receive 1
+111 pc2_1 send 1 ok
+116 pc2_1 receive 1
+165 pc2_1 receive 0
+165 pc2_1 send 1 ok
+200 pc2_1 receive 0
+206 pc2_1 receive 0
+206 pc2_1 send 1 ok
+250 pc2_1 send 1 ok
+262 pc2_1 receive 0
+262 pc2_1 receive 0
 316 pc2_1 send 1 ok
-354 pc2_1 send 1 ok
-368 pc2_1 send 1 ok
-375 pc2_1 receive 0
-381 pc2_1 receive 0
+364 pc2_1 receive 0
+376 pc2_1 receive 1
+387 pc2_1 receive 0
 387 pc2_1 send 1 ok
-451 pc2_1 send 1 ok
-451 pc2_1 receive 0
-479 pc2_1 send 1 ok
-479 pc2_1 receive 0
-527 pc2_1 receive 1
-569 pc2_1 receive 0
-612 pc2_1 receive 0
-653 pc2_1 send 1 ok
-701 pc2_1 receive 0
-732 pc2_1 receive 0
-770 pc2_1 receive 1
-788 pc2_1 receive 0
-847 pc2_1 receive 1
-884 pc2_1 receive 1
-884 pc2_1 receive 1
-907 pc2_1 receive 1
+402 pc2_1 send 1 ok
+438 pc2_1 receive 0
+444 pc2_1 receive 1
+456 pc2_1 send 1 collision
+489 pc2_1 send 1 ok
+511 pc2_1 receive 0
+511 pc2_1 receive 1
+553 pc2_1 receive 1
+553 pc2_1 receive 1
+803 pc2_1 receive 1

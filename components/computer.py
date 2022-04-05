@@ -9,7 +9,7 @@ class Computer(Device):
         pass
 
     def disconnect_port(self, portName):
-        self.port.cable.disconnect()
+        self.port.disconnect()
 
     def getPort(self, portName):
         return self.port

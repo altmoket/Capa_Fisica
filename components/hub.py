@@ -18,7 +18,7 @@ class Hub(Device):
     def disconnect_port(self, portName):
         for port in self.port:
             if portName.__eq__(port.name):
-                port.cable.disconnect() 
+                port.disconnect() 
 
     def getPorts(self):
         return self.port

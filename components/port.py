@@ -29,7 +29,7 @@ class Port:
             self.bit = bit
             self.transmiting = True
             bitReceived = self.cable.read()
-            while self.cableConnected() and bitReceived != bit:
+            while bitReceived !=-1 and self.cableConnected() and bitReceived != bit:
                 self.device.write(bit, "collision", self.name)
                 self.transmiting = False
                 sleep(5/1000)
@@ -37,7 +37,8 @@ class Port:
                 if self.cableConnected():
                     bitReceived = self.cable.read()
             self.device.write(bit, "send", self.name)
-            self.cable.transmit(bit, self.name)
+            if self.cableConnected():
+                self.cable.transmit(bit, self.name)
 
 
     def stop_transmition(self):
@@ -45,10 +46,13 @@ class Port:
         if self.cableConnected():
             self.cable.transmit(-1, self.name)
 
+    def disconnect(self):
+        if self.cableConnected():
+            self.cable.disconnect()
+
     def disconnect_cable(self):
-        self.stop_transmition()
-        del(self.cable)
-        pass
+        if self.cableConnected():
+            del(self.cable)
 
     def cableConnected(self)->bool:
         if hasattr(self, "cable"):
