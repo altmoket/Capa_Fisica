@@ -16,3 +16,4 @@ class Device(metaclass = ABCMeta):
     @abstractmethod
     def write(self, bit, message, portName):
         pass
+

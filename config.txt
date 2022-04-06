@@ -1,0 +1,2 @@
+signal_time=10
+exit_time=0.9

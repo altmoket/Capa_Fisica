@@ -31,3 +31,5 @@ class Computer(Device):
         elif message.__eq__("stop_transmition"):
             return 0;
         self.write_in_output(self.name, outMessage)
+
+

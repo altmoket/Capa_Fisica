@@ -9,7 +9,6 @@ class Port:
 
     def connect(self, cable):
         self.cable = cable
-        pass
 
     def transmit_to_device(self, bit):
         if bit != -1:
