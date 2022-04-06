@@ -1,15 +1,18 @@
-# Simulando Red de Computadoras Capa_Fisica
+# Proyecto de Redes:
+Realizaremos una simulacion de una red de computadoras
 
-Integrantes:
----Leandro Hernandez C-312
----Lidier Robaina C-313
+## Autores:
+***
+* Leandro Hernandez C-312
+* Lidier Robaina C-313
 
-======Requerimientos======
-python3.x
-libreria threading
-libreria time
+## Requerimientos:
+***
+* Lenguaje de Programacion Python
+* Libreria time
+* Libreria threading
 
-======Forma de ejecucion======
-Moverse a la carpeta del proyecto
-Ejecutar el siguiente comando:
+## Forma de ejecucion:
+```bash
 python3 main.py
+```
