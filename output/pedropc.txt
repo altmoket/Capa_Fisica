@@ -1,0 +1,17 @@
+141 pedropc_1 send 0 collision
+141 pedropc_1 receive 1
+156 pedropc_1 send 0 collision
+161 pedropc_1 receive 1
+182 pedropc_1 send 0 collision
+187 pedropc_1 receive 1
+212 pedropc_1 receive 1
+228 pedropc_1 send 0 collision
+228 pedropc_1 receive 0
+248 pedropc_1 send 0 ok
+269 pedropc_1 receive 0
+284 pedropc_1 send 0 ok
+310 pedropc_1 receive 1
+325 pedropc_1 send 0 collision
+355 pedropc_1 send 0 ok
+371 pedropc_1 receive 0
+416 pedropc_1 send 1 ok

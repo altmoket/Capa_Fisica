@@ -1,0 +1,12 @@
+120 anapc_1 send 1 ok
+161 anapc_1 send 1 ok
+182 anapc_1 send 1 ok
+197 anapc_1 send 1 ok
+228 anapc_1 send 0 ok
+248 anapc_1 send 0 ok
+258 anapc_1 receive 0
+284 anapc_1 send 1 ok
+284 anapc_1 receive 0
+340 anapc_1 send 0 ok
+381 anapc_1 receive 0
+437 anapc_1 receive 1

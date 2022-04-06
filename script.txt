@@ -1,13 +1,5 @@
-0 create host pc1
-0 create host pc2
-0 create host pc3
-0 create hub hub1 5
-0 create hub hub2 5
-0 connect pc1_1 hub1_1
-0 connect pc2_1 hub1_2
-0 connect hub2_1 hub1_3
-0 connect pc3_1 hub2_2
-50 send pc2_1 11111111
-50 send pc1_1 10010001
-100 send pc3_1 00001111
-100 send pc3_1 00001111
+0 create host anapc
+0 create host pedropc
+0 connect anapc_1 pedropc_1
+30 send anapc_1 11110010
+50 send pedropc_1 0001
